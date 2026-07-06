@@ -1,0 +1,597 @@
+/* App.css - Clinical Audiology Dashboard Styling */
+
+/* Main layout container */
+.dashboard-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 32px 24px 60px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  background-color: #ffffff; /* White background for the main dashboard content */
+  min-height: 100vh;
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.03);
+}
+
+/* Header styling */
+.dashboard-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.clinic-logo-mark {
+  background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+  color: #ffffff;
+  width: 42px;
+  height: 42px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 10px rgba(37, 99, 235, 0.2);
+}
+
+.dashboard-header h1 {
+  font-size: 22px;
+  font-weight: 700;
+  color: #0f172a;
+  margin: 0;
+  letter-spacing: -0.5px;
+}
+
+.dashboard-header .subtitle {
+  font-size: 13px;
+  color: #64748b;
+  margin: 2px 0 0 0;
+  font-weight: 500;
+}
+
+.header-actions {
+  display: flex;
+  gap: 10px;
+}
+
+/* Common Section Styling */
+.dashboard-section {
+  padding: 24px;
+  border-radius: 16px;
+  background-color: #ffffff;
+  border: 1px solid #f1f5f9;
+  box-shadow: 0 2px 12px rgba(15, 23, 42, 0.015);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  transition: box-shadow 0.3s ease;
+}
+
+.dashboard-section:hover {
+  box-shadow: 0 4px 20px rgba(15, 23, 42, 0.03);
+}
+
+.section-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: #1e293b;
+  margin: 0;
+  letter-spacing: -0.2px;
+}
+
+.section-header-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+/* Patient info card specific */
+.patient-info-card {
+  gap: 16px;
+  background-color: #fafbfc;
+  border: 1px dashed #e2e8f0;
+}
+
+.patient-inputs {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+/* Form Groups & Inputs */
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.form-group label {
+  font-size: 12px;
+  font-weight: 600;
+  color: #64748b;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+  padding: 10px 14px;
+  border-radius: 8px;
+  border: 1px solid #cbd5e1;
+  font-size: 14px;
+  font-family: inherit;
+  color: #1e293b;
+  outline: none;
+  background-color: #ffffff;
+  transition: all 0.2s ease;
+  height: 42px; /* Set height to match inputs exactly */
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+  color: #94a3b8;
+}
+
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+/* Chart Control Panel */
+.chart-mode-controls {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.control-label {
+  font-size: 13px;
+  font-weight: 600;
+  color: #64748b;
+}
+
+.button-group {
+  display: flex;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  overflow: hidden;
+  background-color: #f8fafc;
+  padding: 2px;
+}
+
+.mode-btn {
+  padding: 6px 14px;
+  border: none;
+  background: none;
+  font-size: 13px;
+  font-weight: 600;
+  color: #475569;
+  cursor: pointer;
+  border-radius: 6px;
+  transition: all 0.2s;
+}
+
+.mode-btn.active {
+  background-color: #ffffff;
+  color: #0f172a;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.masked-toggle-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.masked-toggle-wrapper input {
+  cursor: pointer;
+  accent-color: #0f172a;
+  width: 16px;
+  height: 16px;
+}
+
+.toggle-label {
+  font-size: 13px;
+  font-weight: 600;
+  color: #334155;
+}
+
+/* Audiograms Layout */
+.audiograms-layout {
+  display: flex;
+  justify-content: space-around;
+  gap: 24px;
+  flex-wrap: wrap;
+  margin-top: 10px;
+}
+
+.audiogram-chart-wrapper {
+  width: 480px;
+  max-width: 100%;
+  aspect-ratio: 48 / 46;
+}
+
+/* Tables Layout */
+.tables-layout {
+  display: flex;
+  gap: 24px;
+  flex-wrap: wrap;
+  margin-top: 12px;
+}
+
+/* Clinical Sub-forms Grid */
+.clinical-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(480px, 1fr));
+  gap: 24px;
+}
+
+@media (max-width: 540px) {
+  .clinical-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.card-box {
+  background-color: #ffffff;
+  border: 1px solid #f1f5f9;
+}
+
+.text-center {
+  text-align: center;
+  border-bottom: 1px solid #f1f5f9;
+  padding-bottom: 12px;
+  margin-bottom: 8px;
+}
+
+.unified-clinical-section {
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+}
+
+.unified-clinical-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+@media (max-width: 768px) {
+  .unified-clinical-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.ear-column {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.column-title {
+  text-align: center;
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 8px;
+  margin-top: 0;
+}
+
+.right-title {
+  color: #ef4444;
+}
+
+.left-title {
+  color: #3b82f6;
+}
+
+.speech-fields,
+.tympanometry-fields {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.ear-field-group {
+  padding: 8px 12px;
+  border-radius: 8px;
+  border: 1px solid #f1f5f9;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  transition: all 0.2s ease;
+}
+
+.ear-field-group h4 {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.ear-field-group.right-theme {
+  border-left: 4px solid #ef4444;
+  background-color: #fefcfc;
+}
+
+.ear-field-group.right-theme h4 {
+  color: #ef4444;
+}
+
+.ear-field-group.left-theme {
+  border-left: 4px solid #3b82f6;
+  background-color: #fcfdff;
+}
+
+.ear-field-group.left-theme h4 {
+  color: #3b82f6;
+}
+
+.field-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.field-row-three {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 12px;
+}
+
+/* Notes Card styling */
+.notes-card textarea {
+  border-radius: 8px;
+  border: 1px solid #cbd5e1;
+  padding: 12px;
+  font-size: 14px;
+  line-height: 1.5;
+  transition: border-color 0.2s;
+}
+
+/* Button styles */
+button {
+  font-family: inherit;
+}
+
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 28px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 15px;
+  border: none;
+  cursor: pointer;
+  background-color: #0f172a;
+  color: #ffffff;
+  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.15);
+  transition: all 0.2s ease;
+}
+
+.btn-primary:hover {
+  background-color: #1e293b;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 16px rgba(15, 23, 42, 0.2);
+}
+
+.btn-primary:active {
+  transform: translateY(0);
+}
+
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 13.5px;
+  border: 1px solid #cbd5e1;
+  cursor: pointer;
+  background-color: #ffffff;
+  color: #334155;
+  transition: all 0.2s ease;
+}
+
+.btn-secondary:hover {
+  background-color: #f8fafc;
+  border-color: #94a3b8;
+}
+
+.btn-danger {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 13.5px;
+  border: 1px solid #fee2e2;
+  cursor: pointer;
+  background-color: #fef2f2;
+  color: #ef4444;
+  transition: all 0.2s ease;
+}
+
+.btn-danger:hover {
+  background-color: #fee2e2;
+  border-color: #fca5a5;
+}
+
+/* Footer panel with main action button */
+.action-footer {
+  display: flex;
+  justify-content: center;
+  padding: 20px 0;
+  border-top: 1px solid #f1f5f9;
+  margin-top: 16px;
+}
+
+/* Loading spinner */
+.loading-spinner {
+  border: 2.5px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  border-top: 2.5px solid #ffffff;
+  width: 14px;
+  height: 14px;
+  animation: spin 0.8s linear infinite;
+  margin-right: 8px;
+  display: inline-block;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Symptoms Checklist styles */
+.symptoms-checklist-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  padding: 8px 0;
+}
+
+.checkbox-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.checkbox-container {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.checkbox-container input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  margin-top: 2px;
+  cursor: pointer;
+  accent-color: #0f172a;
+}
+
+.checkbox-label {
+  font-size: 14px;
+  color: #334155;
+  font-weight: 500;
+  line-height: 1.4;
+}
+
+.tinnitus-section-wrapper {
+  grid-column: span 2;
+  border-top: 1px dashed #e2e8f0;
+  padding-top: 12px;
+  margin-top: 4px;
+}
+
+.tinnitus-locations-wrapper {
+  margin-left: 28px;
+  margin-top: 10px;
+  padding: 10px 14px;
+  background-color: #f8fafc;
+  border-radius: 6px;
+  border: 1px solid #e2e8f0;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.tinnitus-loc-label {
+  font-size: 13px;
+  font-weight: 600;
+  color: #475569;
+}
+
+.radio-options-row {
+  display: flex;
+  gap: 16px;
+}
+
+.radio-container {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+}
+
+.radio-container input[type="radio"] {
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
+  accent-color: #0f172a;
+}
+
+.radio-label {
+  font-size: 13.5px;
+  color: #334155;
+}
+
+@media (max-width: 768px) {
+  .symptoms-checklist-grid {
+    grid-template-columns: 1fr;
+  }
+  .tinnitus-section-wrapper {
+    grid-column: span 1;
+  }
+  .tinnitus-locations-wrapper {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+}
+
+.otoscopy-options {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 4px;
+}
+
+.sample-loader-banner {
+  display: flex;
+  justify-content: center;
+  padding: 8px 16px;
+  margin-bottom: 12px;
+}
+
+.btn-sample-load {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 24px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 14px;
+  border: none;
+  cursor: pointer;
+  background-color: #facc15;
+  color: #422006;
+  box-shadow: 0 4px 12px rgba(250, 204, 21, 0.3);
+  transition: all 0.2s ease;
+}
+
+.btn-sample-load:hover {
+  background-color: #fde047;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(250, 204, 21, 0.4);
+}
+
+.btn-sample-load:active {
+  transform: translateY(0);
+}
