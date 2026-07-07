@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Analytics } from '@vercel/analytics/react';
 import { AudiogramChart } from './components/AudiogramChart';
 import type { EarData } from './components/AudiogramChart';
 
@@ -907,6 +908,7 @@ function App() {
         symptomTinnitusLocation={symptomTinnitusLocation}
         aiReport={aiReport}
       />
+      <Analytics />
     </div>
   );
 }
