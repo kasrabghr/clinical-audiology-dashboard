@@ -1,6 +1,7 @@
 # Clinical Audiology AI Dashboard
 
 Audiologists lose hours every week to administrative burnout, manually typing up diagnoses from audiograms, speech evaluations, and tympanometry data. This is an AI-assisted reporting tool designed to help audiologists spend less time writing reports after an assessment. 
+
 1️- Users input symptoms and test results into a streamlined clinical UI.
 
 2️- The backend triggers an LLM agent. Unlike a generic LLM, this agent is constrained by strict clinical tools (Pure Tone Evaluation, Speech Validation, and Symptom Correlation), forcing it to follow actual diagnostic rules instead of just guessing.
